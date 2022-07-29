@@ -60,5 +60,24 @@ public class ClientsServices {
         return client;
     }
 
+    public Clients create(Clients client) {
+        logger.info("Creating one client");
+
+        return client;
+    }
+
+    public Clients update(Clients client) {
+        logger.info("update one client");
+
+        return client;
+    }
+
+    public void delete(String id) {
+        logger.info("Delete one client");
+
+    }
+
+
+
 
 }
