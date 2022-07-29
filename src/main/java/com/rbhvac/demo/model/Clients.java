@@ -2,21 +2,45 @@ package com.rbhvac.demo.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "clients")
 public class Clients implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private String nome;
+
+    @Column(nullable = false)
     private String endereço;
+
+    @Column(nullable = false)
     private Integer cpf;
+
+    @Column(nullable = false)
     private Integer telefone;
+
+    @Column(nullable = false)
     private String email;
+
+    @Column(nullable = false, length = 200)
     private String observacao;
     
     
-
-
+   
     public Long getId() {
         return id;
     }
@@ -152,6 +176,10 @@ public class Clients implements Serializable {
             return false;
         return true;
     }
- 
+
+
+   
+
+
     
 }

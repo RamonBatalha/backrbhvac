@@ -26,7 +26,7 @@ public class ClientsServices {
         client.setId(counter.incrementAndGet());
         client.setNome("Ramon da Silva");
         client.setEndereço("Rua doutor severiano, 568, Santa Helena");
-        client.setCpf(1415161615);
+        client.setCpf(151515167);
         client.setTelefone(849874151);
         client.setEmail("rmoamdoa@fmmomso.com");
         client.setObservacao("Observação");
