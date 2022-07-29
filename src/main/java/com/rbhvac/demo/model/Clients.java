@@ -28,10 +28,10 @@ public class Clients implements Serializable {
     private String endereço;
 
     @Column(nullable = false)
-    private Integer cpf;
+    private Long cpf;
 
     @Column(nullable = false)
-    private Integer telefone;
+    private Long telefone;
 
     @Column(nullable = false)
     private String email;
@@ -40,7 +40,10 @@ public class Clients implements Serializable {
     private String observacao;
     
     
-   
+    public Clients() {
+    }
+
+
     public Long getId() {
         return id;
     }
@@ -71,22 +74,22 @@ public class Clients implements Serializable {
     }
 
 
-    public Integer getCpf() {
+    public Long getCpf() {
         return cpf;
     }
 
 
-    public void setCpf(Integer cpf) {
+    public void setCpf(Long cpf) {
         this.cpf = cpf;
     }
 
 
-    public Integer getTelefone() {
+    public Long getTelefone() {
         return telefone;
     }
 
 
-    public void setTelefone(Integer telefone) {
+    public void setTelefone(Long telefone) {
         this.telefone = telefone;
     }
 
@@ -108,10 +111,6 @@ public class Clients implements Serializable {
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
-    }
-
-
-    public Clients() {
     }
 
 
@@ -176,6 +175,10 @@ public class Clients implements Serializable {
             return false;
         return true;
     }
+
+    
+
+   
 
 
    

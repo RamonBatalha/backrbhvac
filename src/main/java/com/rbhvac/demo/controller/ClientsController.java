@@ -25,7 +25,7 @@ public class ClientsController {
                     produces = MediaType.APPLICATION_JSON_VALUE)
 
     public Clients findById (
-        @PathVariable(value="id") String id)
+        @PathVariable(value="id") Long id)
      {
         return clients.findById(id);
     }
@@ -67,7 +67,7 @@ public class ClientsController {
         method = RequestMethod.DELETE
     )
     public void delete(
-            @PathVariable(value = "id") String id)
+            @PathVariable(value = "id") Long id)
      {
        
         clients.delete(id);

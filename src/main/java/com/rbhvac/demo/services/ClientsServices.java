@@ -1,79 +1,70 @@
 package com.rbhvac.demo.services;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rbhvac.demo.exceptions.ResourceNotFoundException;
 import com.rbhvac.demo.model.Clients;
+import com.rbhvac.demo.repository.ClientsRepository;
 
 
 
 @Service
 public class ClientsServices {
      
-    private static final AtomicLong counter = new AtomicLong();
+    @Autowired
+    ClientsRepository repository;
 
     private Logger logger = Logger.getLogger(ClientsServices.class.getName());
 
-    public Clients findById(String id) {
+    public Clients findById(Long id) {
 
         logger.info("Finding one Client");
 
-        Clients client = new Clients();
-        client.setId(counter.incrementAndGet());
-        client.setNome("Ramon da Silva");
-        client.setEndereço("Rua doutor severiano, 568, Santa Helena");
-        client.setCpf(151515167);
-        client.setTelefone(849874151);
-        client.setEmail("rmoamdoa@fmmomso.com");
-        client.setObservacao("Observação");
-        return client;
+      return repository.findById(id)
+      .orElseThrow(()-> new ResourceNotFoundException("No records found for this ID"));
     }
 
     public List<Clients> findaAll() {
         logger.info("Finding All Clients");
 
-        List<Clients> clients = new ArrayList<> ();
-
-        for(int i = 0; i<8 ; i++) {
-            Clients client = mockClients(i);
-            clients.add(client);
-        }
-
-        return clients;
+        return repository.findAll();
     }
 
-    private Clients mockClients (int i) {
-
-        Clients client = new Clients();
-
-        client.setId(counter.incrementAndGet());
-        client.setNome("Person name " + i);
-        client.setEndereço("endereço " + i);
-        client.setCpf(1415161615);
-        client.setTelefone(849874151);
-        client.setEmail("cliente@fmmomso.com");
-        client.setObservacao("Observação" + i);
-        return client;
-    }
+    
 
     public Clients create(Clients client) {
         logger.info("Creating one client");
 
-        return client;
+        return repository.save(client);
     }
 
     public Clients update(Clients client) {
         logger.info("update one client");
 
-        return client;
+        Clients entity = repository.findById(client.getId())
+        .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
+
+        entity.setNome(client.getNome());
+        entity.setEndereço(client.getEndereço());
+        entity.setEmail(client.getEmail());
+        entity.setCpf(client.getCpf());
+        entity.setTelefone(client.getTelefone());
+        entity.setObservacao(client.getObservacao());
+
+        return repository.save(client);
     }
 
-    public void delete(String id) {
+    public void delete(Long id) {
         logger.info("Delete one client");
+
+       Clients entity = repository.findById(id)
+      .orElseThrow(()-> new ResourceNotFoundException("No records found for this ID"));
+
+        repository.delete(entity);
 
     }
 
