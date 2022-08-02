@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rbhvac.demo.model.Clients;
+import com.rbhvac.demo.dataVoV1.ClientsVO;
 import com.rbhvac.demo.services.ClientsServices;
 
 @RestController
@@ -24,49 +24,49 @@ import com.rbhvac.demo.services.ClientsServices;
 public class ClientsController {
     
     @Autowired
-    private ClientsServices clients;
+    private ClientsServices services;
     
     
     @GetMapping (produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Clients> findaAll() {
+    public List<ClientsVO> findaAll() {
         
-        return clients.findaAll();
+        return services.findaAll();
     }
     
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Clients findById (
+    public ClientsVO findById (
         @PathVariable(value="id") Long id)
      {
-        return clients.findById(id);
+        return services.findById(id);
     }
 
     @PostMapping(
         consumes = MediaType.APPLICATION_JSON_VALUE,
         produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Clients create(
-        @RequestBody Clients client 
+    public ClientsVO create(
+        @RequestBody ClientsVO client 
     ) {
        
-        return clients.create(client);
+        return services.create(client);
     }
 
     @PutMapping(
         consumes = MediaType.APPLICATION_JSON_VALUE,
         produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Clients update(
-        @RequestBody Clients client 
+    public ClientsVO update(
+        @RequestBody ClientsVO client 
     ) {
        
-        return clients.update(client);
+        return services.update(client);
     }
 
     @DeleteMapping(value="/{id}")
     public ResponseEntity<?> delete(
             @PathVariable(value = "id") Long id)
      {
-        clients.delete(id);
+        services.delete(id);
 
         return ResponseEntity.noContent().build();
     }

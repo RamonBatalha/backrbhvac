@@ -6,7 +6,9 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rbhvac.demo.dataVoV1.ClientsVO;
 import com.rbhvac.demo.exceptions.ResourceNotFoundException;
+import com.rbhvac.demo.mapper.DozerMapper;
 import com.rbhvac.demo.model.Clients;
 import com.rbhvac.demo.repository.ClientsRepository;
 
@@ -20,32 +22,38 @@ public class ClientsServices {
 
     private Logger logger = Logger.getLogger(ClientsServices.class.getName());
 
-    public Clients findById(Long id) {
+    public List<ClientsVO> findaAll() {
+        logger.info("Finding All Clients");
+
+        return DozerMapper.parseListObject(repository.findAll(), ClientsVO.class) ;
+    }
+
+
+    public ClientsVO findById(Long id) {
 
         logger.info("Finding one Client");
 
-      return repository.findById(id)
+      var entity = repository.findById(id)
       .orElseThrow(()-> new ResourceNotFoundException("No records found for this ID"));
+
+      return DozerMapper.parseObject(entity, ClientsVO.class) ;
     }
 
-    public List<Clients> findaAll() {
-        logger.info("Finding All Clients");
 
-        return repository.findAll();
-    }
-
-    
-
-    public Clients create(Clients client) {
+    public ClientsVO create(ClientsVO client) {
         logger.info("Creating one client");
+        
+        var entity = DozerMapper.parseObject(client, Clients.class);
 
-        return repository.save(client);
+        var vo = DozerMapper.parseObject(repository.save(entity), ClientsVO.class);
+
+        return vo;
     }
 
-    public Clients update(Clients client) {
+    public ClientsVO update(ClientsVO client) {
         logger.info("update one client");
 
-        Clients entity = repository.findById(client.getId())
+        var entity = repository.findById(client.getId())
         .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
 
         entity.setNome(client.getNome());
@@ -55,13 +63,15 @@ public class ClientsServices {
         entity.setTelefone(client.getTelefone());
         entity.setObservacao(client.getObservacao());
 
-        return repository.save(client);
+        var vo = DozerMapper.parseObject(repository.save(entity), ClientsVO.class);
+
+        return vo;
     }
 
     public void delete(Long id) {
         logger.info("Delete one client");
 
-       Clients entity = repository.findById(id)
+       var entity = repository.findById(id)
       .orElseThrow(()-> new ResourceNotFoundException("No records found for this ID"));
 
         repository.delete(entity);

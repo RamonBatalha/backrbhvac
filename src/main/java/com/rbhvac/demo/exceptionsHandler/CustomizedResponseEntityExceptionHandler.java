@@ -1,4 +1,4 @@
-package com.rbhvac.demo.handler;
+package com.rbhvac.demo.exceptionsHandler;
 
 import java.util.Date;
 
