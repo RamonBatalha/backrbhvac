@@ -2,8 +2,10 @@ package com.rbhvac.demo.dataVoV1;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+@JsonPropertyOrder({"id","nome","cpf","endereço","telefone","email","observacao"})
 public class ClientsVO implements Serializable {
 
     private static final long serialVersionUID = 1L;
