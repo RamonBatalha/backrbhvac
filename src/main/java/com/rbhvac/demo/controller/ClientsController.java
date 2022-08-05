@@ -20,7 +20,7 @@ import com.rbhvac.demo.services.ClientsServices;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/clients")
+@RequestMapping("api/clients/v1")
 public class ClientsController {
     
     @Autowired

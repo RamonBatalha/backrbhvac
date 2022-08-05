@@ -16,6 +16,10 @@ Projeto em desenvolvimento utilizando:
 - Utilização de padrão MVC, Migrations, VO/DTO.
 - Banco de dados MySQL 
 
+<img src="./Github/Animação1.gif">
+
+<img src="./Github/MySQL_back.png">
+
 <h4> 💻💻 Projeto em desenvolvimento 💻💻... </h4>
 
 ## Front-end
