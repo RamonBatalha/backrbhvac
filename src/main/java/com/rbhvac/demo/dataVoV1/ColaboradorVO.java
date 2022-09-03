@@ -14,10 +14,10 @@ public class ColaboradorVO implements Serializable {
     private Long id;
     private String nome;
     private String cargo;
-    private Integer remuneraçao;
+    private String remuneraçao;
     private String endereço;
-    private Long cpf;
-    private Long telefone;
+    private String cpf;
+    private String telefone;
     private String email;
     
     public ColaboradorVO() {
@@ -47,11 +47,11 @@ public class ColaboradorVO implements Serializable {
         this.cargo = cargo;
     }
 
-    public Integer getRemuneraçao() {
+    public String getRemuneraçao() {
         return remuneraçao;
     }
 
-    public void setRemuneraçao(Integer remuneraçao) {
+    public void setRemuneraçao(String remuneraçao) {
         this.remuneraçao = remuneraçao;
     }
 
@@ -63,19 +63,19 @@ public class ColaboradorVO implements Serializable {
         this.endereço = endereço;
     }
 
-    public Long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(Long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public Long getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(Long telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -154,7 +154,6 @@ public class ColaboradorVO implements Serializable {
         return true;
     }
 
-
-   
+    
     
 }

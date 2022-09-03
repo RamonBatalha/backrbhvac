@@ -13,7 +13,7 @@ Projeto em desenvolvimento utilizando:
 ## Features implementadas
 
 - ApiRest responsável pela implementação do CRUD de cadastros de clientes e de colaboradores
-- Utilização de padrão MVC, Migrations, VO/DTO.
+- Utilização de padrão MVC com VO/DTO.
 - Banco de dados MySQL 
 
 <img src="./Github/Animação1.gif">

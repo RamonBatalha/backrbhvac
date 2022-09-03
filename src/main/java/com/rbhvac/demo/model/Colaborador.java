@@ -28,16 +28,16 @@ public class Colaborador implements Serializable {
     private String cargo;
 
     @Column(nullable = false)
-    private Integer remuneraçao;
+    private String remuneraçao;
 
     @Column(nullable = false)
     private String endereço;
 
     @Column(nullable = false)
-    private Long cpf;
+    private String cpf;
 
     @Column(nullable = false)
-    private Long telefone;
+    private String telefone;
 
     @Column(nullable = false)
     private String email;
@@ -50,6 +50,7 @@ public class Colaborador implements Serializable {
     public Long getId() {
         return id;
     }
+
 
     public void setId(Long id) {
         this.id = id;
@@ -76,12 +77,12 @@ public class Colaborador implements Serializable {
     }
 
 
-    public Integer getRemuneraçao() {
+    public String getRemuneraçao() {
         return remuneraçao;
     }
 
 
-    public void setRemuneraçao(Integer remuneraçao) {
+    public void setRemuneraçao(String remuneraçao) {
         this.remuneraçao = remuneraçao;
     }
 
@@ -96,22 +97,22 @@ public class Colaborador implements Serializable {
     }
 
 
-    public Long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
 
-    public void setCpf(Long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
 
-    public Long getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
 
-    public void setTelefone(Long telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -194,7 +195,6 @@ public class Colaborador implements Serializable {
         return true;
     }
 
-    
-    
-    
+
+   
 }

@@ -15,8 +15,8 @@ public class ClientsVO implements Serializable {
     private Long id;
     private String nome;
     private String endereço;
-    private Long cpf;
-    private Long telefone;
+    private String cpf;
+    private String telefone;
     private String email;
     private String observacao;
     
@@ -55,22 +55,22 @@ public class ClientsVO implements Serializable {
     }
 
 
-    public Long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
 
-    public void setCpf(Long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
 
-    public Long getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
 
-    public void setTelefone(Long telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -156,13 +156,6 @@ public class ClientsVO implements Serializable {
             return false;
         return true;
     }
-
-    
-
-   
-
-
-   
 
 
     
