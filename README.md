@@ -13,12 +13,15 @@ Projeto em desenvolvimento utilizando:
 ## Features implementadas
 
 - ApiRest responsável pela implementação do CRUD de cadastros de clientes e de colaboradores
+- Cadastro de Ordem de Serviço com relacionamento de tabelas com Clientes e Colaboradores
 - Utilização de padrão MVC com VO/DTO.
 - Banco de dados MySQL 
 
 <img src="./Github/Animação1.gif">
 
 <img src="./Github/MySQL_back.png">
+
+<img src="./Github/relacionamentotabelas.gif">
 
 <h4> 💻💻 Projeto em desenvolvimento 💻💻... </h4>
 
@@ -43,6 +46,7 @@ Acesso ao repositório [Front-end](https://github.com/RamonBatalha/rbhvacfront)
 
 - Realizar o clone do Back-end e Front-end e rodar em cojunto
 - o Projeto está configurado para rodar no localhost em conjunto com BD MySQL
+- Adicionar configurações do Banco de Dados no application.yml de acordo com a sua máquina 
 
 
 
