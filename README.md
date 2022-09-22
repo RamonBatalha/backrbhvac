@@ -23,7 +23,8 @@ Projeto em desenvolvimento utilizando:
 
 <img src="./Github/relacionamentotabelas.gif">
 
-<h4> 💻💻 Projeto em desenvolvimento 💻💻... </h4>
+<img src="./Github/ordemsevico.gif">
+
 
 ## Front-end
 
@@ -32,11 +33,13 @@ Projeto em desenvolvimento utilizando:
 - Ambiente desenvolvido em React Js, utilizando componentização, Hooks, React Router
 - Axios para a realização de requisições ao servidor 
 - Html, Css, Javascript, Bootstrap
+- Yup para validação de formulário
 
 
 ## Features implementadas
 
-- CRUD responsável pela criação e edição de clientes conectado ao Bando de Dados
+- CRUD responsável pela criação e edição de clientes ecolaboradores conectado ao Bando de Dados
+- Função adicionar Ordem de Serviço e alteração de status para concluído
 - Sidebar de navegação
 
 
