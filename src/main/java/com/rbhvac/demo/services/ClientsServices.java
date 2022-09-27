@@ -62,6 +62,8 @@ public class ClientsServices {
         entity.setCpf(client.getCpf());
         entity.setTelefone(client.getTelefone());
         entity.setObservacao(client.getObservacao());
+        
+    
 
         var vo = DozerMapper.parseObject(repository.save(entity), ClientsVO.class);
 
